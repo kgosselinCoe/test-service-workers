@@ -1,5 +1,5 @@
 if('serviceWorker' in navigator){
-	navigator.serviceWorker.register('/sw-test/sw.js', {scope: '/sw-test/'})
+	navigator.serviceWorker.register('/sw-test/sw.js', {scope: '/'})
 	.then((reg) => {
 		if(reg.installing) {
 			console.log('Service worker installing');
