@@ -1,5 +1,5 @@
 if('serviceWorker' in navigator){
-	navigator.serviceWorker.register('/sw-test/sw.js', {scope: '/'})
+	navigator.serviceWorker.register('/sw.js', {scope: '/'})
 	.then((reg) => {
 		if(reg.installing) {
 			console.log('Service worker installing');
@@ -18,7 +18,7 @@ if('serviceWorker' in navigator){
 }
 
 (() => {
-	loadImages('sw-test/alaindeloin.jpg')
+	loadImages('/alaindeloin.jpg')
 	.then(res => {
 		let img = document.createElement('img');
 		img.src= window.URL.createObjectURL(res);
