@@ -18,7 +18,7 @@ if('serviceWorker' in navigator){
 }
 
 (() => {
-	loadImages('/alaindeloin.jpg')
+	loadImages('alaindeloin.jpg')
 	.then(res => {
 		let img = document.createElement('img');
 		img.src= window.URL.createObjectURL(res);
