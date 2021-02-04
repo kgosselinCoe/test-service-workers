@@ -1,7 +1,3 @@
 (() =>{
-	alert('sup');
-})()
-
-document.onLoad = function(){
-	alert('sup');
-}
+	console.log('sup');
+})();
