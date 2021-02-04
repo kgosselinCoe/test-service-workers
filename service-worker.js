@@ -28,7 +28,7 @@ if('serviceWorker' in navigator){
 		console.error(err);
 	})
 })();
-let loadImages = function(url){
+function loadImages(url){
 	return new Promise(function(resolve, reject) {
 		let request = new XMLHttpRequest();
 		request.open('GET', url);
