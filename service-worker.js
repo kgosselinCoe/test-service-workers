@@ -18,5 +18,35 @@ if('serviceWorker' in navigator){
 }
 
 (() => {
-
+	loadImages('sw-test/alaindeloin.jpg')
+	.then(res => {
+		let img = document.createElement('img');
+		img.src= window.URL.createObjectURL(res);
+		document.body.appendChild(img);
+	})
+	.catch(err => {
+		console.error(err);
+	})
 })();
+let loadImages = function(url){
+	return new Promise(function(resolve, reject) {
+		let request = new XMLHttpRequest();
+		request.open('GET', url);
+		request.responseType = 'blob';
+
+		request.onload = function() {
+			if (request.status === 200) {
+				resolve(request.response);
+			} else {
+				reject(Error('Image didn\'t load successfully; error code:' + request.statusText));
+			}
+		};
+
+		request.onerror = function() {
+			reject(Error('There was a network error.'));
+		};
+
+		// Send the request
+		request.send();
+	});
+}

@@ -2,7 +2,8 @@ let CACHE_NAME='test-service-worker-v1';
 let urlsToCache = [
     '/index.html',
     '/sw-test/',
-    '/sw-test/service-worker.js'
+    '/sw-test/service-worker.js',
+    '/sw-test/alaindeloin.jpg'
 ];
 self.addEventListener('install', function (event) {
    event.waitUntil(
